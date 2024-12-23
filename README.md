@@ -17,8 +17,11 @@ import {defineConfig} from 'sanity'
 import {youTubeDocuments} from 'sanity-plugin-youtube-documents'
 
 export default defineConfig({
-  //...
-  plugins: [youTubeDocuments()],
+  // ...your other config
+  plugins: [
+    // ...your other plugins
+    youTubeDocuments(),
+  ],
 })
 ```
 
