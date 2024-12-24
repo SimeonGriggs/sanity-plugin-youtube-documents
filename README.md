@@ -1,6 +1,6 @@
 # sanity-plugin-youtube-documents
 
-Import YouTube videos as documents in Sanity Studio. Requires a "YouTube Data API v3" API key from Google.
+Import YouTube videos as documents in Sanity Studio. Requires a "YouTube Data API v3" API key from Google Cloud.
 
 ## Installation
 
