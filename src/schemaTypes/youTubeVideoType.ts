@@ -22,5 +22,13 @@ export const youTubeVideoType = defineType({
       name: 'thumbnailUrl',
       type: 'url',
     }),
+    defineField({
+      name: 'publishedAt',
+      type: 'datetime',
+    }),
+    defineField({
+      name: 'duration',
+      type: 'string',
+    }),
   ],
 })
