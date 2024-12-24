@@ -3,6 +3,7 @@ export type YouTubeVideoDetails = {
   snippet: {
     title: string
     description: string
+    publishedAt: string
     thumbnails: {
       maxres: {
         url: string
@@ -10,5 +11,8 @@ export type YouTubeVideoDetails = {
         width: number
       }
     }
+  }
+  contentDetails: {
+    duration: string
   }
 }

@@ -41,6 +41,8 @@ export function VideoCard({
         title: videoDetails?.snippet.title,
         description: videoDetails?.snippet.description,
         thumbnailUrl: videoDetails?.snippet.thumbnails.maxres.url,
+        publishedAt: videoDetails?.snippet.publishedAt,
+        duration: videoDetails?.contentDetails.duration,
       })
       .then((res) => {
         setIsLoading(false)

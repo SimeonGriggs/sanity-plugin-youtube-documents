@@ -13,7 +13,7 @@ type VideoFetchProps = {
 }
 
 export function VideoFetch({apiKey}: VideoFetchProps): ReactNode {
-  const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/watch?v=gtUyJOOoUwY')
+  const [videoUrl, setVideoUrl] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [videoDetails, setVideoDetails] = useState<YouTubeVideoDetails | null>(null)
