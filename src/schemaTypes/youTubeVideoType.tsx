@@ -31,4 +31,18 @@ export const youTubeVideoType = defineType({
       type: 'string',
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      publishedAt: 'publishedAt',
+      thumbnailUrl: 'thumbnailUrl',
+    },
+    prepare({title, publishedAt, thumbnailUrl}) {
+      return {
+        title,
+        subtitle: publishedAt,
+        media: <img src={thumbnailUrl} alt={title} style={{objectFit: 'cover', aspectRatio: 1}} />,
+      }
+    },
+  },
 })
