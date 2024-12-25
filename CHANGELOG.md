@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/compare/v1.1.0...v1.1.1) (2024-12-25)
+
+### Bug Fixes
+
+- thumbnail errors ([770820e](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/770820ebcf98e6cd87b78c8bfdfa588f324b6dad))
+
 ## [1.1.0](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/compare/v1.0.0...v1.1.0) (2024-12-25)
 
 ### Features

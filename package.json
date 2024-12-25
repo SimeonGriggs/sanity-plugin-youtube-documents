@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-youtube-documents",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Import YouTube videos as individual documents",
   "keywords": [
     "sanity",
