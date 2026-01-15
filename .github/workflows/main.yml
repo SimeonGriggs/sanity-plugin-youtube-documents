@@ -46,16 +46,19 @@ jobs:
     name: Lint & Build
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: lts/*
-      - run: npm install --legacy-peer-deps
+      - run: pnpm install
         # Linting can be skipped
-      - run: npm run lint --if-present
+      - run: pnpm run lint --if-present
         if: github.event.inputs.test != 'false'
         # But not the build script, as semantic-release will crash if this command fails so it makes sense to test it early
-      - run: npm run prepublishOnly --if-present
+      - run: pnpm run prepublishOnly --if-present
 
   test:
     needs: build
@@ -86,12 +89,15 @@ jobs:
           git config --global core.autocrlf false
           git config --global core.eol lf
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ matrix.node }}
-      - run: npm install --legacy-peer-deps
-      - run: npm test --if-present
+      - run: pnpm install
+      - run: pnpm test --if-present
 
   release:
     permissions:
@@ -110,14 +116,17 @@ jobs:
           # Need to fetch entire commit history to
           # analyze every commit since last release
           fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           node-version: lts/*
-      - run: npm install --legacy-peer-deps
-      - run: npm audit signatures
+      - run: pnpm install
+      - run: pnpm audit signatures
         # Branches that will release new versions are defined in .releaserc.json
-      - run: npx semantic-release
+      - run: pnpm exec semantic-release
         # Don't allow interrupting the release step if the job is cancelled, as it can lead to an inconsistent state
         # e.g. git tags were pushed but it exited before `npm publish`
         if: always()
