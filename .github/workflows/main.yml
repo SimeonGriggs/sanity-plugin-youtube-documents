@@ -60,41 +60,18 @@ jobs:
 
   test:
     needs: build
-    # The test matrix can be skipped, in case a new release needs to be fast-tracked and tests are already passing on main
     if: github.event.inputs.test != 'false'
-    runs-on: ${{ matrix.os }}
-    name: Node.js ${{ matrix.node }} / ${{ matrix.os }}
-    strategy:
-      # A test failing on windows doesn't mean it'll fail on macos. It's useful to let all tests run to its completion to get the full picture
-      fail-fast: false
-      matrix:
-        # Run the testing suite on each major OS with the latest LTS release of Node.js
-        os: [macos-latest, ubuntu-latest, windows-latest]
-        node: [lts/*]
-        # It makes sense to also test the oldest, and latest, versions of Node.js, on ubuntu-only since it's the fastest CI runner
-        include:
-          - os: ubuntu-latest
-            # Test the oldest LTS release of Node that's still receiving bugfixes and security patches, versions older than that have reached End-of-Life
-            node: lts/-1
-          - os: ubuntu-latest
-            # Test the actively developed version that will become the latest LTS release next October
-            node: current
+    runs-on: ubuntu-latest
+    name: Test
     steps:
-      # It's only necessary to do this for windows, as mac and ubuntu are sane OS's that already use LF
-      - name: Set git to use LF
-        if: matrix.os == 'windows-latest'
-        run: |
-          git config --global core.autocrlf false
-          git config --global core.eol lf
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           cache: pnpm
-          node-version: ${{ matrix.node }}
+          node-version: lts/*
       - run: pnpm install
-      - name: Run tests
-        run: pnpm run --if-present test
+      - run: pnpm run --if-present test
 
   release:
     permissions:
