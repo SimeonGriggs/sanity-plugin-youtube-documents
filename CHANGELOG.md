@@ -5,6 +5,26 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.0 (2026-01-15)
+
+- feat!: upgrade to Sanity v5 and React 19 ([67283fa](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/67283fa))
+- Merge pull request #4 from SimeonGriggs/v2 ([03112ff](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/03112ff)), closes [#4](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/issues/4)
+- Merge pull request #5 from SimeonGriggs/fix/ci-pnpm ([00f06cc](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/00f06cc)), closes [#5](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/issues/5)
+- chore: simplify CI test matrix to single Ubuntu LTS job ([22d9b59](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/22d9b59))
+- fix: align CI workflow with tldraw plugin ([6b5214c](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/6b5214c))
+- fix: update CI workflow to use pnpm ([4e9e423](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/4e9e423))
+
+### BREAKING CHANGE
+
+- This version requires Sanity v5 and React 19.
+
+* Update all dependencies to latest versions
+* Migrate to ESLint flat config
+* Add pnpm workspace with dev studio for local testing
+* Update TypeScript config to use @sanity/pkg-utils strictest preset
+* Fix loading state flash when secrets are already configured
+* Remove v2 compatibility files (sanity.json, v2-incompatible.js)
+
 ## [1.1.1](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/compare/v1.1.0...v1.1.1) (2024-12-25)
 
 ### Bug Fixes
