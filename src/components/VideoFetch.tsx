@@ -1,11 +1,12 @@
 import {Box, Button, Card, Flex, Stack, Text, TextInput} from '@sanity/ui'
 import getYouTubeID from 'get-youtube-id'
-import {ChangeEvent, ReactNode, useState} from 'react'
-import {SanityDocument} from 'sanity'
+import type {ChangeEvent, ReactNode} from 'react'
+import {useState} from 'react'
+import type {SanityDocument} from 'sanity'
 import {Feedback, useListeningQuery} from 'sanity-plugin-utils'
 
 import {youTubeVideoType} from '../schemaTypes/youTubeVideoType'
-import {YouTubeVideoDetails} from '../types'
+import type {YouTubeVideoDetails} from '../types'
 import {VideoCard} from './VideoCard'
 
 type VideoFetchProps = {

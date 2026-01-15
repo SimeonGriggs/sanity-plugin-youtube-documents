@@ -1,6 +1,6 @@
 import {SettingsView, useSecrets} from '@sanity/studio-secrets'
-import {Container} from '@sanity/ui'
-import {ReactNode} from 'react'
+import {Container, Flex, Spinner} from '@sanity/ui'
+import type {ReactNode} from 'react'
 
 import {VideoFetch} from './VideoFetch'
 
@@ -13,7 +13,17 @@ const pluginConfigKeys = [
 ]
 
 export function YouTubeDocumentsTool(): ReactNode {
-  const {secrets} = useSecrets<{apiKey: string}>(namespace)
+  const {secrets, loading} = useSecrets<{apiKey: string}>(namespace)
+
+  if (loading) {
+    return (
+      <Container padding={4} width={1}>
+        <Flex align="center" justify="center" padding={5}>
+          <Spinner muted />
+        </Flex>
+      </Container>
+    )
+  }
 
   return (
     <Container padding={4} width={1}>

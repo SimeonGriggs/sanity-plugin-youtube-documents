@@ -1,0 +1,16 @@
+{
+  "name": "sanity-plugin-youtube-documents-studio",
+  "private": true,
+  "scripts": {
+    "build": "sanity build",
+    "dev": "sanity dev",
+    "start": "sanity start"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "^5.0.0",
+    "sanity-plugin-youtube-documents": "workspace:*",
+    "styled-components": "^6.1.19"
+  }
+}
