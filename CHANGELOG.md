@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.0.1 (2026-01-15)</small>
+
+- Merge pull request #6 from SimeonGriggs/fix/trusted-publishing ([9770003](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/9770003)), closes [#6](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/issues/6)
+- fix: align with tldraw plugin for trusted publishing ([eeec03c](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/eeec03c))
+- fix: use npm trusted publishing via OIDC ([0377394](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/0377394))
+
 ## 2.0.0 (2026-01-15)
 
 - feat!: upgrade to Sanity v5 and React 19 ([67283fa](https://github.com/SimeonGriggs/sanity-plugin-youtube-documents/commit/67283fa))
