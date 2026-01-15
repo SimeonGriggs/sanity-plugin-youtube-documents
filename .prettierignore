@@ -1,4 +1,6 @@
-dist
-pnpm-lock.yaml
-yarn.lock
-package-lock.json
+assets
+build
+coverage
+tap-snapshots
+test/fixtures
+studio

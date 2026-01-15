@@ -1,10 +1,11 @@
 import {Button, Card, Grid, Stack, Text, useToast} from '@sanity/ui'
-import {ReactNode} from 'react'
-import {Preview, SanityDocument, useClient, useSchema} from 'sanity'
+import type {ReactNode} from 'react'
+import {Preview, useClient, useSchema} from 'sanity'
+import type {SanityDocument} from 'sanity'
 import {Feedback} from 'sanity-plugin-utils'
 
 import {youTubeVideoType} from '../schemaTypes/youTubeVideoType'
-import {YouTubeVideoDetails} from '../types'
+import type {YouTubeVideoDetails} from '../types'
 
 function getHighestResolutionThumbnail(
   thumbnails: Record<string, {url: string; width: number; height: number}>,
